@@ -1,1 +1,13 @@
-
+class Solution {
+public:
+    int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int S1=(ax2-ax1)*(ay2-ay1);
+        int S2=(bx2-bx1)*(by2-by1);
+        int w=0,h=0,crossArea=0;
+        w=max(0,min(ax2,bx2)-max(ax1,bx1));
+        h=max(0,min(ay2,by2)-max(ay1,by1));
+        crossArea=w*h;
+        return S1+S2-crossArea;
+    }
+};//思路还是很简单的，主要就是中间min的使用，这个和另一道题目当中判断两个矩形是否相交使用的思路基本一致
+//就是两个直线一定会相交
